@@ -1,11 +1,23 @@
-<form (ngSubmit)="onSubmit(title.value, request.value)" #form>
+<form (ngSubmit)="onSubmit()" #form>
   <app-control label="Title">
-    <input id="title" type="text" name="title" #title #input />
+    <input
+      id="title"
+      type="text"
+      name="title"
+      #input
+      [(ngModel)]="enteredTitle"
+    />
   </app-control>
   <app-control label="Request">
-    <textarea id="request" name="request" rows="3" #request #input></textarea>
+    <textarea
+      id="request"
+      name="request"
+      rows="3"
+      #input
+      [(ngModel)]="enteredRequest"
+    ></textarea>
   </app-control>
-  <button appButton> 
+  <button appButton>
     Submit
     <span ngProjectAs="icon"> → </span>
   </button>
